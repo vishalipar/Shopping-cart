@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<h1>Welcome to Dhamaka sale</h1>
+
+{% endblock %}
+
+
+{% block body %}
+
+{% load static %}
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role='alert'>
+      <strong>{{message}}</strong>
+      <button type="button" class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+  
+    {% endfor %}
+    
+    <div class="section-title">
+      <h2>Welcome to shop</h2>
+      <h3>Check our <span>Products</span></h3>
+    </div>
+
+    
+    
+    {% for product,range,nSlides in allProds %}
+    
+      
+      <h3 class='my-3 text-center text-success bg-light'> {{product.0.category}} Flashsale</h3>
+      <div class="container">
+        <div class="row">
+          
+          {% for i in product %}
+          
+          <div class="col-md-3 mt-3">
+            
+            <img src="/media/{{i.image}}" class='card-img-top' alt="not found" height='260px' width='170px'>
+            <div class="card-body">
+              <h5 class="card-title m-2" id='namepr{{i.id}}'>{{i.product_name}}</h5>
+              <p class="card-text">{{i.desc|slice:"0:53"}}...</p>
+              <h6 class="card-title mb-3">
+                Price:<span id='pricepr{{i.id}}'>{{i.price}}</span>
+              </h6>
+              <span id='divpr{{i.id}}' class='divpr'>
+                <button id='pr{{i.id}}' class='btn btn-danger cart btn-sm mt-0'>
+                  AddToCart
+                </button>
+              </span>
+              
+              <a href="/media/{{i.image}}">
+                <button class='btn btn-dark btn-sm cart'>View</button>
+              </a>
+              
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    {% endfor %}
+    
+    
+    
+  </div>
+</section><!-- End Portfolio Section -->
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+
+
+<script>
+  
+</script>
+
+
+{% endblock %}
