@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gkwmia09c)_cuv*$*mnt1+h2vc4jhqarvrco6dw$4zqxccg81x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -117,8 +117,8 @@ USE_TZ = True
 # sending email
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'vishaliparsndcoe.in'
-EMAIL_HOST_PASSWORD = 'password'
+EMAIL_HOST_USER = 'vishaliparce23@sndcoe.ac.in'
+EMAIL_HOST_PASSWORD = 'gepo smvw ygks ykfr'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
