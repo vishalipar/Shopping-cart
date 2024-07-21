@@ -1,11 +1,11 @@
 {
     "builds": [{
-        "src": "ecommerce/wsgi.py",
+        "src": "Shopping-cart/ecommerce/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [{
         "src": "/(.*)",
-        "dest": "ecommerce/wsgi.py"
+        "dest": "Shopping-cart/ecommerce/wsgi.py"
     }]
 }
